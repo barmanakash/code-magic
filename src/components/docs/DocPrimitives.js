@@ -29,6 +29,14 @@ export function DocH2({ children }) {
   );
 }
 
+export function DocH3({ children }) {
+  return (
+    <Typography variant="h3" sx={{ fontSize: '1.2rem', mt: 4, mb: 1.5 }}>
+      {children}
+    </Typography>
+  );
+}
+
 export function DocP({ children }) {
   return (
     <Typography variant="body1" sx={{ color: 'text.secondary', lineHeight: 1.85, mb: 2, fontSize: '1rem' }}>

@@ -56,6 +56,7 @@ export default function DocsSidebar() {
                       mb: 0.25,
                       py: 0.7,
                       px: 1.5,
+                      transition: 'background-color 0.2s ease, transform 0.2s ease',
                       '&.Mui-selected': {
                         bgcolor: 'rgba(232,163,61,0.12)',
                         borderLeft: '2px solid #E8A33D',
@@ -65,6 +66,7 @@ export default function DocsSidebar() {
                       },
                       '&:hover': {
                         bgcolor: 'rgba(155,138,196,0.08)',
+                        transform: 'translateX(1px)',
                       },
                     }}
                   >

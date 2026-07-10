@@ -41,7 +41,21 @@ export default function HowItWorks() {
         <Grid container spacing={4}>
           {STEPS.map((s, idx) => (
             <Grid item xs={12} md={4} key={s.n}>
-              <Box sx={{ position: 'relative', pl: 0 }}>
+              <Box
+                sx={{
+                  position: 'relative',
+                  pl: 0,
+                  p: 3,
+                  borderRadius: 3,
+                  bgcolor: 'rgba(255,255,255,0.02)',
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease',
+                  '&:hover': {
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 24px 55px -30px rgba(0,0,0,0.7)',
+                    bgcolor: 'rgba(255,255,255,0.04)',
+                  },
+                }}
+              >
                 <Typography
                   sx={{
                     fontFamily: '"Fraunces", serif',

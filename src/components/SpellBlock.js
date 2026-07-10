@@ -46,6 +46,18 @@ export default function SpellBlock() {
         background: 'linear-gradient(180deg, #17131F 0%, #12101C 100%)',
         boxShadow: '0 30px 80px -20px rgba(0,0,0,0.6)',
         minHeight: 260,
+        opacity: 0,
+        transform: 'translateY(18px)',
+        transition: 'transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease',
+        animation: 'fadeInUp 0.75s ease 0.15s forwards',
+        '&:hover': {
+          transform: 'translateY(-5px)',
+          boxShadow: '0 40px 110px -30px rgba(0,0,0,0.75)',
+        },
+        '@keyframes fadeInUp': {
+          '0%': { opacity: 0, transform: 'translateY(18px)' },
+          '100%': { opacity: 1, transform: 'translateY(0)' },
+        },
       }}
     >
       {/* window chrome */}

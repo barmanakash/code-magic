@@ -21,7 +21,12 @@ export default function Navbar() {
           direction="row"
           alignItems="center"
           spacing={1}
-          sx={{ flexGrow: 1, textDecoration: 'none' }}
+          sx={{
+            flexGrow: 1,
+            textDecoration: 'none',
+            transition: 'transform 0.25s ease, opacity 0.25s ease',
+            '&:hover': { transform: 'translateY(-1px)' },
+          }}
         >
           <AutoAwesomeIcon sx={{ color: 'primary.main', fontSize: 22 }} />
           <Typography
@@ -60,7 +65,19 @@ export default function Navbar() {
         <Button
           variant="contained"
           color="primary"
-          sx={{ ml: 3, borderRadius: 2, px: 2.5, py: 0.8, fontFamily: '"JetBrains Mono", monospace', fontSize: 13.5 }}
+          sx={{
+            ml: 3,
+            borderRadius: 2,
+            px: 2.5,
+            py: 0.8,
+            fontFamily: '"JetBrains Mono", monospace',
+            fontSize: 13.5,
+            transition: 'transform 0.24s ease, box-shadow 0.24s ease',
+            '&:hover': {
+              transform: 'translateY(-2px)',
+              boxShadow: '0 18px 40px rgba(232,163,61,0.18)',
+            },
+          }}
         >
           cast('signup')
         </Button>

@@ -55,7 +55,17 @@ export default function Hero() {
                 color="primary"
                 size="large"
                 endIcon={<ArrowForwardIcon />}
-                sx={{ borderRadius: 2, px: 3.5, py: 1.4, fontSize: '1rem' }}
+                sx={{
+                  borderRadius: 2,
+                  px: 3.5,
+                  py: 1.4,
+                  fontSize: '1rem',
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                  '&:hover': {
+                    transform: 'translateY(-2px)',
+                    boxShadow: '0 18px 42px rgba(232,163,61,0.18)',
+                  },
+                }}
               >
                 Start casting — it's free
               </Button>
@@ -69,7 +79,12 @@ export default function Hero() {
                   fontSize: '1rem',
                   borderColor: 'rgba(155,138,196,0.4)',
                   color: 'text.primary',
-                  '&:hover': { borderColor: 'text.secondary', bgcolor: 'rgba(155,138,196,0.08)' },
+                  transition: 'transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease',
+                  '&:hover': {
+                    borderColor: 'text.secondary',
+                    bgcolor: 'rgba(155,138,196,0.08)',
+                    transform: 'translateY(-2px)',
+                  },
                 }}
               >
                 Watch a 90s demo

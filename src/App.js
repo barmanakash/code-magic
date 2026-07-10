@@ -1,11 +1,10 @@
 import React from 'react';
 import { ThemeProvider, CssBaseline, Box } from '@mui/material';
+import { Routes, Route } from 'react-router-dom';
 import theme from './theme';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Features from './components/Features';
-import HowItWorks from './components/HowItWorks';
-import CtaFooter from './components/CtaFooter';
+import Home from './pages/Home';
+import DocsPage from './pages/DocsPage';
 
 function App() {
   return (
@@ -13,10 +12,11 @@ function App() {
       <CssBaseline />
       <Box sx={{ bgcolor: 'background.default', minHeight: '100vh' }}>
         <Navbar />
-        <Hero />
-        <Features />
-        <HowItWorks />
-        <CtaFooter />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/docs" element={<DocsPage />} />
+          <Route path="/docs/:sectionId" element={<DocsPage />} />
+        </Routes>
       </Box>
     </ThemeProvider>
   );

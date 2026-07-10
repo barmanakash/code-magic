@@ -1,5 +1,6 @@
 import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Stack } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 export default function Navbar() {
@@ -14,18 +15,38 @@ export default function Navbar() {
       }}
     >
       <Toolbar sx={{ maxWidth: 1160, width: '100%', mx: 'auto', py: 1 }}>
-        <Stack direction="row" alignItems="center" spacing={1} sx={{ flexGrow: 1 }}>
+        <Stack
+          component={RouterLink}
+          to="/"
+          direction="row"
+          alignItems="center"
+          spacing={1}
+          sx={{ flexGrow: 1, textDecoration: 'none' }}
+        >
           <AutoAwesomeIcon sx={{ color: 'primary.main', fontSize: 22 }} />
           <Typography
             variant="h6"
-            sx={{ fontFamily: '"Fraunces", serif', fontWeight: 600, letterSpacing: '-0.01em' }}
+            sx={{ fontFamily: '"Fraunces", serif', fontWeight: 600, letterSpacing: '-0.01em', color: 'text.primary' }}
           >
             Code Magic
           </Typography>
         </Stack>
 
         <Stack direction="row" spacing={3} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
-          {['Product', 'How it works', 'Pricing'].map((item) => (
+          <Typography
+            component={RouterLink}
+            to="/docs/introduction"
+            variant="body2"
+            sx={{
+              color: 'text.secondary',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              '&:hover': { color: 'text.primary' },
+            }}
+          >
+            Docs
+          </Typography>
+          {['How it works', 'Pricing'].map((item) => (
             <Typography
               key={item}
               variant="body2"

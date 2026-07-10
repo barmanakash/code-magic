@@ -38,7 +38,20 @@ import CompundComponent from '../components/docs/compoundComponent';
 import Authentication from '../components/docs/authentication';
 import ReactSecurity from '../components/docs/reactSecurity';
 import Testing from '../components/docs/testing';
-
+import BestPractice from '../components/docs/bestPractice';
+import DesignPattern from '../components/docs/designPatterns';
+import Accessibility from '../components/docs/accessibility';
+import SEO from '../components/docs/seo';
+import ReactTypescript from '../components/docs/reacttypescrip';
+import ReactWithBackend from '../components/docs/reactwithbackend';
+import PopularLibrary from '../components/docs/popularlibraries';
+import AdvanceReact from '../components/docs/advancereact';
+import InterviewPreparation from '../components/docs/interviewpreparation';
+import RealProject from  '../components/docs/realproject';
+import CheatSheet from '../components/docs/cheatsheet';
+import Glossary from '../components/docs/glossary';
+import MigrationGuides from '../components/docs/migrationguides'
+import ReleaseNotes from '../components/docs/realeasnote';
 
 
 const PAGES = {
@@ -78,15 +91,20 @@ const PAGES = {
   authentication: Authentication, 
   reactsecurity: ReactSecurity,
   testing: Testing,
-
-
-
-
-
-
-
-
-
+  bestpractice: BestPractice,
+  designpattern: DesignPattern,
+  accessibility: Accessibility,
+  seo: SEO,
+  reacttypescript: ReactTypescript,
+  reactwithbackend: ReactWithBackend,
+  popularlibrary: PopularLibrary,
+  advancereact: AdvanceReact,
+  interviewpreparation: InterviewPreparation,
+  realproject: RealProject,
+  cheatsheet: CheatSheet,
+  glossary: Glossary,
+  migrationguides: MigrationGuides,
+  releasenotes: ReleaseNotes,
 };
 
 export default function DocsPage() {

@@ -1,9 +1,27 @@
-import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Stack } from '@mui/material';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, Button, Stack, Box, Menu, MenuItem } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 
 export default function Navbar() {
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+
+  const handleOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const docCategories = [
+    { label: 'ReactJS', to: '/docs/introduction' },
+    { label: 'JavaScript', to: '/docs/javascript' },
+    { label: 'HTML', to: '/docs/html' },
+    { label: 'CSS', to: '/docs/css' },
+  ];
+
   return (
     <AppBar
       position="sticky"
@@ -38,19 +56,54 @@ export default function Navbar() {
         </Stack>
 
         <Stack direction="row" spacing={3} alignItems="center" sx={{ display: { xs: 'none', md: 'flex' } }}>
-          <Typography
-            component={RouterLink}
-            to="/docs/introduction"
-            variant="body2"
-            sx={{
-              color: 'text.secondary',
-              textDecoration: 'none',
-              cursor: 'pointer',
-              '&:hover': { color: 'text.primary' },
-            }}
-          >
-            Docs
-          </Typography>
+          <Box onMouseEnter={handleOpen}>
+            <Typography
+              component="button"
+              type="button"
+              onClick={handleOpen}
+              variant="body2"
+              sx={{
+                color: 'text.secondary',
+                textDecoration: 'none',
+                cursor: 'pointer',
+                background: 'transparent',
+                border: 'none',
+                padding: 0,
+                font: 'inherit',
+                '&:hover': { color: 'text.primary' },
+              }}
+            >
+              Docs
+            </Typography>
+            <Menu
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'left' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'left' }}
+              MenuListProps={{ onMouseLeave: handleClose }}
+              sx={{
+                '& .MuiPaper-root': {
+                  mt: 1,
+                  borderRadius: 2,
+                  minWidth: 180,
+                  boxShadow: '0 18px 42px rgba(0,0,0,0.16)',
+                },
+              }}
+            >
+              {docCategories.map((item) => (
+                <MenuItem
+                  key={item.label}
+                  component={RouterLink}
+                  to={item.to}
+                  onClick={handleClose}
+                  sx={{ py: 1.1, px: 1.75 }}
+                >
+                  {item.label}
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
           {['How it works', 'Pricing'].map((item) => (
             <Typography
               key={item}

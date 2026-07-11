@@ -5,7 +5,7 @@ import docsNav from '../../data/docsNav';
 
 const DRAWER_WIDTH = 260;
 
-export default function DocsSidebar() {
+export default function DocsSidebar({ navGroups = docsNav }) {
   const navigate = useNavigate();
   const { sectionId } = useParams();
 
@@ -26,7 +26,7 @@ export default function DocsSidebar() {
     >
       <Toolbar />
       <Box sx={{ overflowY: 'auto', py: 3, px: 2 }}>
-        {docsNav.map((group) => (
+        {navGroups.map((group) => (
           <Box key={group.group} sx={{ mb: 3 }}>
             <Typography
               variant="caption"

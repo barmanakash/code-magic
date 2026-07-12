@@ -94,6 +94,14 @@ import BrowserCapability from '../components/DocCss/browsercapability';
 import CSSPreprocessors from '../components/DocCss/csspreprocessors';
 import PostCSS from '../components/DocCss/postcss';
 import CssFrameworks from '../components/DocCss/cssframework';
+import CssInJavaScript from '../components/DocCss/cssinjavascript';
+import DebuggingCSS from '../components/DocCss/debuggingcss';
+import CssBestPractice from '../components/DocCss/bestPractice';
+import CommonMistake from '../components/DocCss/commonmistake';
+import InterviewQuestion from '../components/DocCss/interviewquestion';
+import CssRealProject from '../components/DocCss/realproject';
+import CheatSeet from '../components/DocCss/cheatsheat';
+import CssFAQ from '../components/DocCss/cssfaq';
 
 
 
@@ -125,8 +133,8 @@ const CSS_SIDEBAR = [
     group: 'CSS',
     items: [
       { id: 'css', label: 'Introduction' },
-      { id: 'css-layout', label: 'Layout' },
-      { id: 'css-responsive', label: 'Responsive design' },
+      // { id: 'css-layout', label: 'Layout' },
+      // { id: 'css-responsive', label: 'Responsive design' },
       { id: 'prerequisitescss', label: 'Prerequisites' },
       { id: 'environmentsetupcss', label: ' Environment Setup' },
       { id: 'csssyntax', label: 'CSS Syntax' },
@@ -166,7 +174,15 @@ const CSS_SIDEBAR = [
       { id: 'browsercapability', label: 'Browser Compatibility' },
       { id: 'csspreprocessors', label: ' CSS Preprocessors' },
       { id: 'postcss', label: ' PostCSS' },
-      { id: 'cssframeworks', label: ' CSS Frameworks' },
+      { id: 'cssframeworks', label: ' CSS Frameworks' },  
+      { id: 'cssinjavascript', label: ' CSS In JavaScript' },
+      { id: 'debuggingcss', label: 'Debugging CSS' },
+      { id: 'bestpractice', label: 'Best Practice' },
+      { id: 'commonmistake', label: 'Common Mistakes'},
+      { id: 'interviewquestion', label: 'Interview Questions'},
+      { id: 'realproject', label: 'Real Project'},
+      { id: 'cheatsheet', label: 'Cheat Sheet'},
+      { id: 'csfaq', label: 'FAQ'},
     ],
   },
 ];
@@ -190,8 +206,8 @@ const PAGES = {
   'html-structure': HtmlDocs,
   'html-forms': HtmlDocs,
   css: CssDocs,
-  'css-layout': CssDocs,
-  'css-responsive': CssDocs,
+  // 'css-layout': CssDocs,
+  // 'css-responsive': CssDocs,
   props: Props,
   state: State,
   event: Event,
@@ -271,6 +287,15 @@ const PAGES = {
   csspreprocessors: CSSPreprocessors,
   postcss: PostCSS,
   cssframeworks: CssFrameworks,
+  cssinjavascript: CssInJavaScript,
+  debuggingcss: DebuggingCSS,
+  bestpractice: CssBestPractice,
+  commonmistake: CommonMistake,
+  interviewquestion: InterviewQuestion,
+  realproject: CssRealProject,
+  cheatsheet: CheatSeet,
+  csfaq: CssFAQ,
+  
 
 };
 
@@ -283,7 +308,7 @@ export default function DocsPage() {
       ? JAVASCRIPT_SIDEBAR
       : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms'
         ? HTML_SIDEBAR
-        : sectionId === 'css' || sectionId === 'css-layout' || sectionId === 'css-responsive' || sectionId === 'prerequisitescss' ||
+        : sectionId === 'css'|| sectionId === 'prerequisitescss' ||
           sectionId === 'environmentsetupcss' || sectionId === 'csssyntax' || sectionId === 'waytoapply' || sectionId === 'csscomments' ||
           sectionId === 'csselector' || sectionId === 'csscolor' || sectionId === 'cssunit' || sectionId === 'backgrounds' || sectionId === 'borders'
           || sectionId === 'typography' || sectionId === 'textproperties' || sectionId === 'boxmodel' || sectionId === 'widthheight' || sectionId === 'display'
@@ -291,7 +316,8 @@ export default function DocsPage() {
           || sectionId === 'tables' || sectionId === 'list' || sectionId === 'formstyling' || sectionId === 'images' || sectionId === 'cssvariable' || sectionId === 'function'
           || sectionId === 'transitions' || sectionId === 'animations' || sectionId === 'transform' || sectionId === 'filters' || sectionId === 'responshivedesign' || sectionId === 'cssarchitecture'
           || sectionId === 'cssmethodology' || sectionId === 'moderncssfeatures' || sectionId === 'cssaccessibility' || sectionId === 'performanceoptimization' || sectionId === 'browsercapability'
-          || sectionId === 'csspreprocessors' || sectionId === 'postcss' || sectionId === 'cssframeworks'
+          || sectionId === 'csspreprocessors' || sectionId === 'postcss' || sectionId === 'cssframeworks' || sectionId === 'cssinjavascript' || sectionId === 'debuggingcss' 
+          || sectionId === 'bestpractice' || sectionId === 'commonmistake' || sectionId === 'interviewquestion' || sectionId === 'realproject' || sectionId === 'cheatsheet' || sectionId === 'csfaq'
           ? CSS_SIDEBAR
           : undefined;
 

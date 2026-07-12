@@ -71,7 +71,20 @@ import WidthHeight from '../components/DocCss/widthheight';
 import Display from '../components/DocCss/display';
 import Positioning from '../components/DocCss/positioning';
 import Overflow from '../components/DocCss/overflow';
-import Floats from '../components/DocCss/floats'
+import Floats from '../components/DocCss/floats';
+import FlexBox from '../components/DocCss/flelxbox';
+import CssGrid from '../components/DocCss/cssgrid';
+import Tables from '../components/DocCss/tables';
+import CssList from '../components/DocCss/list';
+import FormStyling from '../components/DocCss/fromstyling';
+import Images from '../components/DocCss/images';
+import CssVariable from '../components/DocCss/cssVariable';
+import Function from '../components/DocCss/function';
+import Transitions from '../components/DocCss/transitions';
+import Animations from '../components/DocCss/animation';
+import Transform from '../components/DocCss/transform';
+import Filters from '../components/DocCss/filters';
+import ResponshiveDesign from '../components/DocCss/responshiveDesign'
 
 
 const JAVASCRIPT_SIDEBAR = [
@@ -116,12 +129,25 @@ const CSS_SIDEBAR = [
       { id: 'borders', label: 'Borders' },
       { id: 'typography', label: 'Typography' },
       { id: 'textproperties', label: 'Text Properties' },
-      { id: 'boxmodel', label: 'Box Model' },  
-      { id: 'widthheight', label: 'Width Height' }, 
+      { id: 'boxmodel', label: 'Box Model' },
+      { id: 'widthheight', label: 'Width Height' },
       { id: 'display', label: 'Display' },
-      { id: 'positioning', label: 'Positioning' }, 
+      { id: 'positioning', label: 'Positioning' },
       { id: 'overflow', label: 'Overflow' },
       { id: 'floats', label: 'Floats' },
+      { id: 'flexbox', label: 'FlexBox' },
+      { id: 'cssgrid', label: 'CssGrid' },
+      { id: 'tables', label: 'Tables' },
+      { id: 'list', label: 'List' },
+      { id: 'formstyling', label: 'Form Styling' },
+      { id: 'images', label: 'Images' },
+      { id: 'cssvariable', label: ' CSS Variables' },
+      { id: 'function', label: 'Function' },
+      { id: 'transitions', label: 'Transitions' }, 
+      { id: 'animations', label: 'Animations' },
+      { id: 'transform', label: 'Transform' }, 
+      { id: 'filters', label: 'Filters' },
+      { id: 'responshivedesign', label: ' Responsive Design' },
     ],
   },
 ];
@@ -204,6 +230,19 @@ const PAGES = {
   positioning: Positioning,
   overflow: Overflow,
   floats: Floats,
+  flexbox: FlexBox,
+  cssgrid: CssGrid,
+  tables: Tables,
+  list: CssList,
+  formstyling: FormStyling,
+  images: Images,
+  cssvariable: CssVariable,
+  function: Function,
+  transitions: Transitions,
+  animations: Animations,
+  transform: Transform, 
+  filters: Filters,
+  responshivedesign: ResponshiveDesign,
 };
 
 export default function DocsPage() {
@@ -219,7 +258,9 @@ export default function DocsPage() {
           sectionId === 'environmentsetupcss' || sectionId === 'csssyntax' || sectionId === 'waytoapply' || sectionId === 'csscomments' ||
           sectionId === 'csselector' || sectionId === 'csscolor' || sectionId === 'cssunit' || sectionId === 'backgrounds' || sectionId === 'borders'
           || sectionId === 'typography' || sectionId === 'textproperties' || sectionId === 'boxmodel' || sectionId === 'widthheight' || sectionId === 'display'
-          || sectionId === 'positioning' || sectionId === 'overflow' || sectionId === 'floats'
+          || sectionId === 'positioning' || sectionId === 'overflow' || sectionId === 'floats' || sectionId === 'flexbox' || sectionId === 'cssgrid'
+          || sectionId === 'tables' || sectionId === 'list' || sectionId === 'formstyling' || sectionId === 'images' || sectionId === 'cssvariable' || sectionId === 'function'
+          || sectionId === 'transitions' || sectionId === 'animations' || sectionId === 'transform' || sectionId === 'filters' || sectionId === 'responshivedesign'
           ? CSS_SIDEBAR
           : undefined;
 

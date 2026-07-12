@@ -84,7 +84,17 @@ import Transitions from '../components/DocCss/transitions';
 import Animations from '../components/DocCss/animation';
 import Transform from '../components/DocCss/transform';
 import Filters from '../components/DocCss/filters';
-import ResponshiveDesign from '../components/DocCss/responshiveDesign'
+import ResponshiveDesign from '../components/DocCss/responshiveDesign';
+import CssArchitecture from '../components/DocCss/cssArchitecture';
+import CssMethodology from '../components/DocCss/cssmethodology';
+import ModernCssFeatures from '../components/DocCss/moderncssfeatures';
+import CSSAccessibility from '../components/DocCss/cssaccesibility';
+import PerformanceOptimization from '../components/DocCss/performanceoptimization';
+import BrowserCapability from '../components/DocCss/browsercapability';
+import CSSPreprocessors from '../components/DocCss/csspreprocessors';
+import PostCSS from '../components/DocCss/postcss';
+import CssFrameworks from '../components/DocCss/cssframework';
+
 
 
 const JAVASCRIPT_SIDEBAR = [
@@ -148,6 +158,15 @@ const CSS_SIDEBAR = [
       { id: 'transform', label: 'Transform' }, 
       { id: 'filters', label: 'Filters' },
       { id: 'responshivedesign', label: ' Responsive Design' },
+      { id: 'cssarchitecture', label: 'CSS Architecture' },
+      { id: 'cssmethodology', label: 'CSS Methodologies' },           
+      { id: 'moderncssfeatures', label: 'Modern CSS Features' },
+      { id: 'cssaccessibility', label: 'Accessibility' },
+      { id: 'performanceoptimization', label: 'Performance Optimization' },
+      { id: 'browsercapability', label: 'Browser Compatibility' },
+      { id: 'csspreprocessors', label: ' CSS Preprocessors' },
+      { id: 'postcss', label: ' PostCSS' },
+      { id: 'cssframeworks', label: ' CSS Frameworks' },
     ],
   },
 ];
@@ -243,6 +262,16 @@ const PAGES = {
   transform: Transform, 
   filters: Filters,
   responshivedesign: ResponshiveDesign,
+  cssarchitecture: CssArchitecture,
+  cssmethodology: CssMethodology,
+  moderncssfeatures: ModernCssFeatures,
+  cssaccessibility: CSSAccessibility,
+  performanceoptimization: PerformanceOptimization, 
+  browsercapability: BrowserCapability,
+  csspreprocessors: CSSPreprocessors,
+  postcss: PostCSS,
+  cssframeworks: CssFrameworks,
+
 };
 
 export default function DocsPage() {
@@ -260,7 +289,9 @@ export default function DocsPage() {
           || sectionId === 'typography' || sectionId === 'textproperties' || sectionId === 'boxmodel' || sectionId === 'widthheight' || sectionId === 'display'
           || sectionId === 'positioning' || sectionId === 'overflow' || sectionId === 'floats' || sectionId === 'flexbox' || sectionId === 'cssgrid'
           || sectionId === 'tables' || sectionId === 'list' || sectionId === 'formstyling' || sectionId === 'images' || sectionId === 'cssvariable' || sectionId === 'function'
-          || sectionId === 'transitions' || sectionId === 'animations' || sectionId === 'transform' || sectionId === 'filters' || sectionId === 'responshivedesign'
+          || sectionId === 'transitions' || sectionId === 'animations' || sectionId === 'transform' || sectionId === 'filters' || sectionId === 'responshivedesign' || sectionId === 'cssarchitecture'
+          || sectionId === 'cssmethodology' || sectionId === 'moderncssfeatures' || sectionId === 'cssaccessibility' || sectionId === 'performanceoptimization' || sectionId === 'browsercapability'
+          || sectionId === 'csspreprocessors' || sectionId === 'postcss' || sectionId === 'cssframeworks'
           ? CSS_SIDEBAR
           : undefined;
 

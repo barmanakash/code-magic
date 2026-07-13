@@ -15,6 +15,15 @@ import Deployment from '../components/docs/Deployment';
 import Faq from '../components/docs/Faq';
 import EnvironmentSetup from '../components/docs/environmentsetup';
 import JavaScript from '../components/docs/javaScript';
+import JsIntroduction from '../components/docs/jsIntroduction';
+import JsPrerequisites from '../components/docs/jsPrerequisites';
+import JsEnvironmentSetup from '../components/docs/jsEnvironmentSetup';
+import JsBasics from '../components/docs/jsBasics';
+import JsVariables from '../components/docs/jsVariables';
+import JsDataTypes from '../components/docs/jsDataTypes';
+import JsOperators from '../components/docs/jsOperators';
+import JsTypeConversion from '../components/docs/jsTypeConversion';
+import JsStrings from '../components/docs/jsStrings';
 import Props from '../components/docs/props';
 import State from '../components/docs/state';
 import Event from '../components/docs/event';
@@ -109,8 +118,15 @@ const JAVASCRIPT_SIDEBAR = [
   {
     group: 'JavaScript',
     items: [
-      { id: 'javascript', label: 'Overview' },
+      { id: 'javascript', label: 'Introduction' },
+      { id: 'jsprerequisites', label: 'Prerequisites' },
+      { id: 'jsenvironmentsetup', label: 'Environment Setup' },
       { id: 'javascript-basics', label: 'Basics' },
+      { id: 'jsvariables', label: 'Variables' },
+      { id: 'jsdatatypes', label: 'Data Types' },
+      { id: 'jsoperators', label: 'Operators' },
+      { id: 'jstypeconversion', label: 'Type Conversion' },
+      { id: 'jsstrings', label: 'Strings' },
       { id: 'javascript-logic', label: 'Logic & loops' },
       { id: 'javascript-data', label: 'Arrays & objects' },
     ],
@@ -198,8 +214,15 @@ const PAGES = {
   deployment: Deployment,
   faq: Faq,
   environmentsetup: EnvironmentSetup,
-  javascript: JavaScript,
-  'javascript-basics': JavaScript,
+  javascript: JsIntroduction,
+  jsprerequisites: JsPrerequisites,
+  jsenvironmentsetup: JsEnvironmentSetup,
+  'javascript-basics': JsBasics,
+  jsvariables: JsVariables,
+  jsdatatypes: JsDataTypes,
+  jsoperators: JsOperators,
+  jstypeconversion: JsTypeConversion,
+  jsstrings: JsStrings,
   'javascript-logic': JavaScript,
   'javascript-data': JavaScript,
   html: HtmlDocs,
@@ -304,7 +327,7 @@ export default function DocsPage() {
   const PageComponent = PAGES[sectionId];
 
   const sidebarNavGroups =
-    sectionId === 'javascript' || sectionId === 'javascript-basics' || sectionId === 'javascript-logic' || sectionId === 'javascript-data'
+    sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'javascript-logic' || sectionId === 'javascript-data'
       ? JAVASCRIPT_SIDEBAR
       : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms'
         ? HTML_SIDEBAR

@@ -144,6 +144,21 @@ import InterviewQuestion from '../components/DocCss/interviewquestion';
 import CssRealProject from '../components/DocCss/realproject';
 import CheatSeet from '../components/DocCss/cheatsheat';
 import CssFAQ from '../components/DocCss/cssfaq';
+import HTMLIntroduction from '../components/DocHTML/htmlintroduction'
+import HTMLPrerequisitesDoc from '../components/DocHTML/htmlprerequsites'
+import HTMLEnvironmentSetupDoc from '../components/DocHTML/htmlnwfile';
+import HTMLBasicsDoc from '../components/DocHTML/htmlSetup';
+import HTMLElementsDoc from '../components/DocHTML/htmlElements';
+import HTMLAttributesDoc from '../components/DocHTML/htmlattributes';
+import HTMLHeadElementsDoc from '../components/DocHTML/headElements';
+import HTMLTextFormattingDoc from '../components/DocHTML/textformating';
+import HTMLLinksDoc from '../components/DocHTML/links';
+import HTMLImagesDoc from '../components/DocHTML/images';
+import HTMLAudioDoc from '../components/DocHTML/audio';
+import HTMLVideoDoc from '../components/DocHTML/vidio';
+import HTMLListsDoc from '../components/DocHTML/htmllist';
+import HTMLTablesDoc from '../components/DocHTML/tables'
+
 
 
 
@@ -204,6 +219,20 @@ const HTML_SIDEBAR = [
       { id: 'html', label: 'Overview' },
       { id: 'html-structure', label: 'Structure' },
       { id: 'html-forms', label: 'Forms' },
+      { id: 'htmlintroduction', label: 'Introduction' },
+      { id: 'htmlpre', label: 'Prerequisites' },
+      { id: 'htmlenv', label: 'Environment Setup' },
+      { id: 'htmlsetup', label: 'HTML Basics' },
+      { id: 'htmlElements', label: 'HTML Elements' },
+      { id: 'htmlattributes', label: 'HTML Attributes'},
+      { id: 'htmlheadelements', label: 'Head Elements'},
+      { id: 'htmlformating', label: 'Text Formatting'},
+      { id: 'htmlinks', label: 'Links'},
+      { id: 'htmlimages', label: 'Images'},
+      { id: 'htmlaudio', label: 'Audio'},
+      { id: 'htmlvideo', label: 'Video'},
+      { id: 'htmllist', label: 'Lists'},
+      { id: 'htmltable', label: 'Tables'},
     ],
   },
 ];
@@ -413,6 +442,20 @@ const PAGES = {
   realproject: CssRealProject,
   cheatsheet: CheatSeet,
   csfaq: CssFAQ,
+  htmlintroduction: HTMLIntroduction, 
+  htmlpre: HTMLPrerequisitesDoc,
+  htmlenv: HTMLEnvironmentSetupDoc,
+  htmlsetup: HTMLBasicsDoc,
+  htmlElements: HTMLElementsDoc, 
+  htmlattributes: HTMLAttributesDoc, 
+  htmlheadelements : HTMLHeadElementsDoc,
+  htmlformating: HTMLTextFormattingDoc,
+  htmlinks: HTMLLinksDoc,
+  htmlimages: HTMLImagesDoc,
+  htmlaudio: HTMLAudioDoc,
+  htmlvideo: HTMLVideoDoc,
+  htmllist: HTMLListsDoc,
+  htmltable: HTMLTablesDoc,   
   
 
 };
@@ -424,7 +467,9 @@ export default function DocsPage() {
   const sidebarNavGroups =
     sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'jsnumbers' || sectionId === 'jsdates' || sectionId === 'javascript-logic' || sectionId === 'javascript-data' || sectionId === 'jsobjects' || sectionId === 'jsfunctions' || sectionId === 'jsscope' || sectionId === 'jshoisting' || sectionId === 'jscontrolflow' || sectionId === 'jserrorhandling' || sectionId === 'jsevents' || sectionId === 'jsdom' || sectionId === 'jsbom' || sectionId === 'jsforms' || sectionId === 'jstimers' || sectionId === 'jsmodules' || sectionId === 'jsclasses' || sectionId === 'jsoop' || sectionId === 'jsasync' || sectionId === 'jsfetch' || sectionId === 'jsjson' || sectionId === 'jsstorage' || sectionId === 'jsregex' || sectionId === 'jsiteratorsgenerators' || sectionId === 'jscollections' || sectionId === 'jsadvancedfunctions' || sectionId === 'jsadvancedobjects' || sectionId === 'jsmemory' || sectionId === 'jsperformance' || sectionId === 'jsbrowserapis' || sectionId === 'jswebapis' || sectionId === 'jssecurity' || sectionId === 'jstesting'
       ? JAVASCRIPT_SIDEBAR
-      : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms'
+      : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms' || sectionId === 'htmlintroduction' ||
+       sectionId === 'htmlpre' || sectionId === 'htmlenv' || sectionId === 'htmlsetup' || sectionId === 'htmlElements' || 
+       sectionId === 'htmlattributes' || sectionId === 'htmlheadelements'|| sectionId === 'htmlformating' || sectionId === 'htmlinks' || sectionId === 'htmlimages' || sectionId === 'htmlaudio' || sectionId === 'htmlvideo' || sectionId === 'htmllist' || sectionId === 'htmltable'
         ? HTML_SIDEBAR
         : sectionId === 'css'|| sectionId === 'prerequisitescss' ||
           sectionId === 'environmentsetupcss' || sectionId === 'csssyntax' || sectionId === 'waytoapply' || sectionId === 'csscomments' ||

@@ -33,6 +33,23 @@ import JsBom from '../components/docs/jsBom';
 import JsForms from '../components/docs/jsForms';
 import JsTimers from '../components/docs/jsTimers';
 import JsModules from '../components/docs/jsModules';
+import JsClasses from '../components/docs/jsClasses';
+import JsOop from '../components/docs/jsOop';
+import JsAsync from '../components/docs/jsAsync';
+import JsFetch from '../components/docs/jsFetch';
+import JsJson from '../components/docs/jsJson';
+import JsStorage from '../components/docs/jsStorage';
+import JsRegex from '../components/docs/jsRegex';
+import JsIteratorsGenerators from '../components/docs/jsIteratorsGenerators';
+import JsCollections from '../components/docs/jsCollections';
+import JsAdvancedFunctions from '../components/docs/jsAdvancedFunctions';
+import JsAdvancedObjects from '../components/docs/jsAdvancedObjects';
+import JsMemory from '../components/docs/jsMemory';
+import JsPerformance from '../components/docs/jsPerformance';
+import JsBrowserApis from '../components/docs/jsBrowserApis';
+import JsWebApis from '../components/docs/jsWebApis';
+import JsSecurity from '../components/docs/jsSecurity';
+import JsTesting from '../components/docs/jsTesting';
 import JsOperators from '../components/docs/jsOperators';
 import JsTypeConversion from '../components/docs/jsTypeConversion';
 import JsStrings from '../components/docs/jsStrings';
@@ -159,6 +176,23 @@ const JAVASCRIPT_SIDEBAR = [
       { id: 'jsforms', label: 'Forms' },
       { id: 'jstimers', label: 'Timers' },
       { id: 'jsmodules', label: 'Modules' },
+      { id: 'jsclasses', label: 'Classes' },
+      { id: 'jsoop', label: 'Object-Oriented Programming' },
+      { id: 'jsasync', label: 'Asynchronous JavaScript' },
+      { id: 'jsfetch', label: 'Fetch API' },
+      { id: 'jsjson', label: 'JSON' },
+      { id: 'jsstorage', label: 'Storage' },
+      { id: 'jsregex', label: 'Regular Expressions' },
+      { id: 'jsiteratorsgenerators', label: 'Iterators & Generators' },
+      { id: 'jscollections', label: 'Collections' },
+      { id: 'jsadvancedfunctions', label: 'Advanced Functions' },
+      { id: 'jsadvancedobjects', label: 'Advanced Objects' },
+      { id: 'jsmemory', label: 'Memory Management' },
+      { id: 'jsperformance', label: 'Performance Optimization' },
+      { id: 'jsbrowserapis', label: 'Browser APIs' },
+      { id: 'jswebapis', label: 'Web APIs' },
+      { id: 'jssecurity', label: 'Security' },
+      { id: 'jstesting', label: 'Testing' },
     ],
   },
 ];
@@ -269,6 +303,23 @@ const PAGES = {
   jsforms: JsForms,
   jstimers: JsTimers,
   jsmodules: JsModules,
+  jsclasses: JsClasses,
+  jsoop: JsOop,
+  jsasync: JsAsync,
+  jsfetch: JsFetch,
+  jsjson: JsJson,
+  jsstorage: JsStorage,
+  jsregex: JsRegex,
+  jsiteratorsgenerators: JsIteratorsGenerators,
+  jscollections: JsCollections,
+  jsadvancedfunctions: JsAdvancedFunctions,
+  jsadvancedobjects: JsAdvancedObjects,
+  jsmemory: JsMemory,
+  jsperformance: JsPerformance,
+  jsbrowserapis: JsBrowserApis,
+  jswebapis: JsWebApis,
+  jssecurity: JsSecurity,
+  jstesting: JsTesting,
   html: HtmlDocs,
   'html-structure': HtmlDocs,
   'html-forms': HtmlDocs,
@@ -371,7 +422,7 @@ export default function DocsPage() {
   const PageComponent = PAGES[sectionId];
 
   const sidebarNavGroups =
-    sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'jsnumbers' || sectionId === 'jsdates' || sectionId === 'javascript-logic' || sectionId === 'javascript-data' || sectionId === 'jsobjects' || sectionId === 'jsfunctions' || sectionId === 'jsscope' || sectionId === 'jshoisting' || sectionId === 'jscontrolflow' || sectionId === 'jserrorhandling' || sectionId === 'jsevents' || sectionId === 'jsdom' || sectionId === 'jsbom' || sectionId === 'jsforms' || sectionId === 'jstimers' || sectionId === 'jsmodules'
+    sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'jsnumbers' || sectionId === 'jsdates' || sectionId === 'javascript-logic' || sectionId === 'javascript-data' || sectionId === 'jsobjects' || sectionId === 'jsfunctions' || sectionId === 'jsscope' || sectionId === 'jshoisting' || sectionId === 'jscontrolflow' || sectionId === 'jserrorhandling' || sectionId === 'jsevents' || sectionId === 'jsdom' || sectionId === 'jsbom' || sectionId === 'jsforms' || sectionId === 'jstimers' || sectionId === 'jsmodules' || sectionId === 'jsclasses' || sectionId === 'jsoop' || sectionId === 'jsasync' || sectionId === 'jsfetch' || sectionId === 'jsjson' || sectionId === 'jsstorage' || sectionId === 'jsregex' || sectionId === 'jsiteratorsgenerators' || sectionId === 'jscollections' || sectionId === 'jsadvancedfunctions' || sectionId === 'jsadvancedobjects' || sectionId === 'jsmemory' || sectionId === 'jsperformance' || sectionId === 'jsbrowserapis' || sectionId === 'jswebapis' || sectionId === 'jssecurity' || sectionId === 'jstesting'
       ? JAVASCRIPT_SIDEBAR
       : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms'
         ? HTML_SIDEBAR

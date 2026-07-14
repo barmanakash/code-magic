@@ -21,9 +21,25 @@ import JsEnvironmentSetup from '../components/docs/jsEnvironmentSetup';
 import JsBasics from '../components/docs/jsBasics';
 import JsVariables from '../components/docs/jsVariables';
 import JsDataTypes from '../components/docs/jsDataTypes';
+import JsFunctions from '../components/docs/jsFunctions';
+import JsScope from '../components/docs/jsScope';
+import JsHoisting from '../components/docs/jsHoisting';
+import JsControlFlow from '../components/docs/jsControlFlow';
+import JsLoops from '../components/docs/jsLoops';
+import JsErrorHandling from '../components/docs/jsErrorHandling';
+import JsEvents from '../components/docs/jsEvents';
+import JsDom from '../components/docs/jsDom';
+import JsBom from '../components/docs/jsBom';
+import JsForms from '../components/docs/jsForms';
+import JsTimers from '../components/docs/jsTimers';
+import JsModules from '../components/docs/jsModules';
 import JsOperators from '../components/docs/jsOperators';
 import JsTypeConversion from '../components/docs/jsTypeConversion';
 import JsStrings from '../components/docs/jsStrings';
+import JsNumbers from '../components/docs/jsNumbers';
+import JsDates from '../components/docs/jsDates';
+import JsArrays from '../components/docs/jsArrays';
+import JsObjects from '../components/docs/jsObjects';
 import Props from '../components/docs/props';
 import State from '../components/docs/state';
 import Event from '../components/docs/event';
@@ -127,8 +143,22 @@ const JAVASCRIPT_SIDEBAR = [
       { id: 'jsoperators', label: 'Operators' },
       { id: 'jstypeconversion', label: 'Type Conversion' },
       { id: 'jsstrings', label: 'Strings' },
-      { id: 'javascript-logic', label: 'Logic & loops' },
-      { id: 'javascript-data', label: 'Arrays & objects' },
+      { id: 'jsnumbers', label: 'Numbers' },
+      { id: 'jsdates', label: 'Dates' },
+      { id: 'javascript-logic', label: 'Loops' },
+      { id: 'javascript-data', label: 'Arrays' },
+      { id: 'jsobjects', label: 'Objects' },
+      { id: 'jsfunctions', label: 'Functions' },
+      { id: 'jsscope', label: 'Scope' },
+      { id: 'jshoisting', label: 'Hoisting' },
+      { id: 'jscontrolflow', label: 'Control Flow' },
+      { id: 'jserrorhandling', label: 'Error Handling' },
+      { id: 'jsevents', label: 'Events' },
+      { id: 'jsdom', label: 'DOM' },
+      { id: 'jsbom', label: 'BOM' },
+      { id: 'jsforms', label: 'Forms' },
+      { id: 'jstimers', label: 'Timers' },
+      { id: 'jsmodules', label: 'Modules' },
     ],
   },
 ];
@@ -223,8 +253,22 @@ const PAGES = {
   jsoperators: JsOperators,
   jstypeconversion: JsTypeConversion,
   jsstrings: JsStrings,
-  'javascript-logic': JavaScript,
-  'javascript-data': JavaScript,
+  jsnumbers: JsNumbers,
+  jsdates: JsDates,
+  'javascript-logic': JsLoops,
+  'javascript-data': JsArrays,
+  jsobjects: JsObjects,
+  jsfunctions: JsFunctions,
+  jsscope: JsScope,
+  jshoisting: JsHoisting,
+  jscontrolflow: JsControlFlow,
+  jserrorhandling: JsErrorHandling,
+  jsevents: JsEvents,
+  jsdom: JsDom,
+  jsbom: JsBom,
+  jsforms: JsForms,
+  jstimers: JsTimers,
+  jsmodules: JsModules,
   html: HtmlDocs,
   'html-structure': HtmlDocs,
   'html-forms': HtmlDocs,
@@ -327,7 +371,7 @@ export default function DocsPage() {
   const PageComponent = PAGES[sectionId];
 
   const sidebarNavGroups =
-    sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'javascript-logic' || sectionId === 'javascript-data'
+    sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'jsnumbers' || sectionId === 'jsdates' || sectionId === 'javascript-logic' || sectionId === 'javascript-data' || sectionId === 'jsobjects' || sectionId === 'jsfunctions' || sectionId === 'jsscope' || sectionId === 'jshoisting' || sectionId === 'jscontrolflow' || sectionId === 'jserrorhandling' || sectionId === 'jsevents' || sectionId === 'jsdom' || sectionId === 'jsbom' || sectionId === 'jsforms' || sectionId === 'jstimers' || sectionId === 'jsmodules'
       ? JAVASCRIPT_SIDEBAR
       : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms'
         ? HTML_SIDEBAR

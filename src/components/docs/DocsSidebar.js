@@ -5,17 +5,21 @@ import docsNav from '../../data/docsNav';
 
 const DRAWER_WIDTH = 260;
 
-export default function DocsSidebar({ navGroups = docsNav }) {
+export default function DocsSidebar({ navGroups = docsNav, variant = 'permanent', open = false, onClose = () => {} }) {
   const navigate = useNavigate();
   const { sectionId } = useParams();
+  const responsiveDisplay = variant === 'permanent' ? { xs: 'none', md: 'block' } : { xs: 'block', md: 'none' };
 
   return (
     <Drawer
-      variant="permanent"
+      variant={variant}
+      open={open}
+      onClose={onClose}
+      ModalProps={{ keepMounted: true }}
       sx={{
         width: DRAWER_WIDTH,
         flexShrink: 0,
-        display: { xs: 'none', md: 'block' },
+        display: responsiveDisplay,
         '& .MuiDrawer-paper': {
           width: DRAWER_WIDTH,
           boxSizing: 'border-box',
@@ -50,7 +54,10 @@ export default function DocsSidebar({ navGroups = docsNav }) {
                   <ListItemButton
                     key={item.id}
                     selected={active}
-                    onClick={() => navigate(`/docs/${item.id}`)}
+                    onClick={() => {
+                      navigate(`/docs/${item.id}`);
+                      if (typeof onClose === 'function') onClose();
+                    }}
                     sx={{
                       borderRadius: 1.5,
                       mb: 0.25,

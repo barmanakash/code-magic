@@ -1,5 +1,6 @@
-import React from 'react';
-import { Box, Container, Toolbar } from '@mui/material';
+import React, { useState } from 'react';
+import { Box, Container, Toolbar, IconButton, Typography } from '@mui/material';
+import MenuIcon from '@mui/icons-material/Menu';
 import { useParams, Navigate } from 'react-router-dom';
 import DocsSidebar, { DRAWER_WIDTH } from '../components/docs/DocsSidebar';
 import Introduction from '../components/docs/Introduction';
@@ -114,7 +115,7 @@ import CssColor from '../components/DocCss/cssColor';
 import CssUnit from '../components/DocCss/cssunit';
 import Backgrounds from '../components/DocCss/backgrounds';
 import Borders from '../components/DocCss/borders';
-import Typography from '../components/DocCss/typography';
+import TypographyCss from '../components/DocCss/typography';
 import TextProperties from '../components/DocCss/textproperties';
 import BoxModel from '../components/DocCss/boxmodel';
 import WidthHeight from '../components/DocCss/widthheight';
@@ -490,7 +491,7 @@ const PAGES = {
   cssunit: CssUnit,
   backgrounds: Backgrounds,
   borders: Borders,
-  typography: Typography,
+  typography: TypographyCss,
   textproperties: TextProperties,
   boxmodel: BoxModel,
   widthheight: WidthHeight,
@@ -580,6 +581,11 @@ const PAGES = {
 export default function DocsPage() {
   const { sectionId } = useParams();
   const PageComponent = PAGES[sectionId];
+  const [mobileOpen, setMobileOpen] = useState(false);
+
+  const toggleMobileSidebar = () => {
+    setMobileOpen((prev) => !prev);
+  };
 
   const sidebarNavGroups =
     sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'jsnumbers' || sectionId === 'jsdates' || sectionId === 'javascript-logic' || sectionId === 'javascript-data' || sectionId === 'jsobjects' || sectionId === 'jsfunctions' || sectionId === 'jsscope' || sectionId === 'jshoisting' || sectionId === 'jscontrolflow' || sectionId === 'jserrorhandling' || sectionId === 'jsevents' || sectionId === 'jsdom' || sectionId === 'jsbom' || sectionId === 'jsforms' || sectionId === 'jstimers' || sectionId === 'jsmodules' || sectionId === 'jsclasses' || sectionId === 'jsoop' || sectionId === 'jsasync' || sectionId === 'jsfetch' || sectionId === 'jsjson' || sectionId === 'jsstorage' || sectionId === 'jsregex' || sectionId === 'jsiteratorsgenerators' || sectionId === 'jscollections' || sectionId === 'jsadvancedfunctions' || sectionId === 'jsadvancedobjects' || sectionId === 'jsmemory' || sectionId === 'jsperformance' || sectionId === 'jsbrowserapis' || sectionId === 'jswebapis' || sectionId === 'jssecurity' || sectionId === 'jstesting' || sectionId === 'jsdebugging' || sectionId === 'jsdesignpatterns' || sectionId === 'jsbestpractices' || sectionId === 'jscommonmistakes' || sectionId === 'jsinterviewquestions' || sectionId === 'jsrealprojects' || sectionId === 'jscheatsheet' || sectionId === 'jsfaqappendix'
@@ -614,6 +620,12 @@ export default function DocsPage() {
   return (
     <Box sx={{ display: 'flex' }}>
       <DocsSidebar navGroups={sidebarNavGroups} />
+      <DocsSidebar
+        navGroups={sidebarNavGroups}
+        variant="temporary"
+        open={mobileOpen}
+        onClose={toggleMobileSidebar}
+      />
       <Box
         component="main"
         sx={{
@@ -623,6 +635,14 @@ export default function DocsPage() {
         }}
       >
         <Toolbar sx={{ display: { xs: 'none', md: 'block' } }} />
+        <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center', justifyContent: 'space-between', px: 2, py: 1 }}>
+          <Typography variant="h6" sx={{ fontWeight: 600, color: 'text.primary' }}>
+            Docs navigation
+          </Typography>
+          <IconButton color="inherit" onClick={toggleMobileSidebar}>
+            <MenuIcon />
+          </IconButton>
+        </Box>
         <Container maxWidth="md" sx={{ py: { xs: 5, md: 7 } }}>
           <PageComponent />
         </Container>

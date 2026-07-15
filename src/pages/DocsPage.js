@@ -50,6 +50,14 @@ import JsBrowserApis from '../components/docs/jsBrowserApis';
 import JsWebApis from '../components/docs/jsWebApis';
 import JsSecurity from '../components/docs/jsSecurity';
 import JsTesting from '../components/docs/jsTesting';
+import JsDebugging from '../components/docs/jsDebugging';
+import JsDesignPatterns from '../components/docs/jsDesignPatterns';
+import JsBestPractices from '../components/docs/jsBestPractices';
+import JsCommonMistakes from '../components/docs/jsCommonMistakes';
+import JsInterviewQuestions from '../components/docs/jsInterviewQuestions';
+import JsRealProjects from '../components/docs/jsRealProjects';
+import JsCheatSheet from '../components/docs/jsCheatSheet';
+import JsFaqAppendix from '../components/docs/jsFaqAppendix';
 import JsOperators from '../components/docs/jsOperators';
 import JsTypeConversion from '../components/docs/jsTypeConversion';
 import JsStrings from '../components/docs/jsStrings';
@@ -158,6 +166,7 @@ import HTMLAudioDoc from '../components/DocHTML/audio';
 import HTMLVideoDoc from '../components/DocHTML/vidio';
 import HTMLListsDoc from '../components/DocHTML/htmllist';
 import HTMLTablesDoc from '../components/DocHTML/tables'
+import HTMLFormsDoc from '../components/DocHTML/forms'
 
 
 
@@ -208,6 +217,14 @@ const JAVASCRIPT_SIDEBAR = [
       { id: 'jswebapis', label: 'Web APIs' },
       { id: 'jssecurity', label: 'Security' },
       { id: 'jstesting', label: 'Testing' },
+      { id: 'jsdebugging', label: 'Debugging' },
+      { id: 'jsdesignpatterns', label: 'Design Patterns' },
+      { id: 'jsbestpractices', label: 'Best Practices' },
+      { id: 'jscommonmistakes', label: 'Common Mistakes' },
+      { id: 'jsinterviewquestions', label: 'Interview Questions' },
+      { id: 'jsrealprojects', label: 'Real Projects' },
+      { id: 'jscheatsheet', label: 'Cheat Sheets' },
+      { id: 'jsfaqappendix', label: 'FAQs & Appendix' },
     ],
   },
 ];
@@ -233,6 +250,7 @@ const HTML_SIDEBAR = [
       { id: 'htmlvideo', label: 'Video'},
       { id: 'htmllist', label: 'Lists'},
       { id: 'htmltable', label: 'Tables'},
+      { id: 'htmlforms', label: 'Forms'},
     ],
   },
 ];
@@ -349,6 +367,14 @@ const PAGES = {
   jswebapis: JsWebApis,
   jssecurity: JsSecurity,
   jstesting: JsTesting,
+  jsdebugging: JsDebugging,
+  jsdesignpatterns: JsDesignPatterns,
+  jsbestpractices: JsBestPractices,
+  jscommonmistakes: JsCommonMistakes,
+  jsinterviewquestions: JsInterviewQuestions,
+  jsrealprojects: JsRealProjects,
+  jscheatsheet: JsCheatSheet,
+  jsfaqappendix: JsFaqAppendix,
   html: HtmlDocs,
   'html-structure': HtmlDocs,
   'html-forms': HtmlDocs,
@@ -456,6 +482,7 @@ const PAGES = {
   htmlvideo: HTMLVideoDoc,
   htmllist: HTMLListsDoc,
   htmltable: HTMLTablesDoc,   
+  htmlforms: HTMLFormsDoc,
   
 
 };
@@ -465,11 +492,11 @@ export default function DocsPage() {
   const PageComponent = PAGES[sectionId];
 
   const sidebarNavGroups =
-    sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'jsnumbers' || sectionId === 'jsdates' || sectionId === 'javascript-logic' || sectionId === 'javascript-data' || sectionId === 'jsobjects' || sectionId === 'jsfunctions' || sectionId === 'jsscope' || sectionId === 'jshoisting' || sectionId === 'jscontrolflow' || sectionId === 'jserrorhandling' || sectionId === 'jsevents' || sectionId === 'jsdom' || sectionId === 'jsbom' || sectionId === 'jsforms' || sectionId === 'jstimers' || sectionId === 'jsmodules' || sectionId === 'jsclasses' || sectionId === 'jsoop' || sectionId === 'jsasync' || sectionId === 'jsfetch' || sectionId === 'jsjson' || sectionId === 'jsstorage' || sectionId === 'jsregex' || sectionId === 'jsiteratorsgenerators' || sectionId === 'jscollections' || sectionId === 'jsadvancedfunctions' || sectionId === 'jsadvancedobjects' || sectionId === 'jsmemory' || sectionId === 'jsperformance' || sectionId === 'jsbrowserapis' || sectionId === 'jswebapis' || sectionId === 'jssecurity' || sectionId === 'jstesting'
+    sectionId === 'javascript' || sectionId === 'jsprerequisites' || sectionId === 'jsenvironmentsetup' || sectionId === 'javascript-basics' || sectionId === 'jsvariables' || sectionId === 'jsdatatypes' || sectionId === 'jsoperators' || sectionId === 'jstypeconversion' || sectionId === 'jsstrings' || sectionId === 'jsnumbers' || sectionId === 'jsdates' || sectionId === 'javascript-logic' || sectionId === 'javascript-data' || sectionId === 'jsobjects' || sectionId === 'jsfunctions' || sectionId === 'jsscope' || sectionId === 'jshoisting' || sectionId === 'jscontrolflow' || sectionId === 'jserrorhandling' || sectionId === 'jsevents' || sectionId === 'jsdom' || sectionId === 'jsbom' || sectionId === 'jsforms' || sectionId === 'jstimers' || sectionId === 'jsmodules' || sectionId === 'jsclasses' || sectionId === 'jsoop' || sectionId === 'jsasync' || sectionId === 'jsfetch' || sectionId === 'jsjson' || sectionId === 'jsstorage' || sectionId === 'jsregex' || sectionId === 'jsiteratorsgenerators' || sectionId === 'jscollections' || sectionId === 'jsadvancedfunctions' || sectionId === 'jsadvancedobjects' || sectionId === 'jsmemory' || sectionId === 'jsperformance' || sectionId === 'jsbrowserapis' || sectionId === 'jswebapis' || sectionId === 'jssecurity' || sectionId === 'jstesting' || sectionId === 'jsdebugging' || sectionId === 'jsdesignpatterns' || sectionId === 'jsbestpractices' || sectionId === 'jscommonmistakes' || sectionId === 'jsinterviewquestions' || sectionId === 'jsrealprojects' || sectionId === 'jscheatsheet' || sectionId === 'jsfaqappendix'
       ? JAVASCRIPT_SIDEBAR
       : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms' || sectionId === 'htmlintroduction' ||
        sectionId === 'htmlpre' || sectionId === 'htmlenv' || sectionId === 'htmlsetup' || sectionId === 'htmlElements' || 
-       sectionId === 'htmlattributes' || sectionId === 'htmlheadelements'|| sectionId === 'htmlformating' || sectionId === 'htmlinks' || sectionId === 'htmlimages' || sectionId === 'htmlaudio' || sectionId === 'htmlvideo' || sectionId === 'htmllist' || sectionId === 'htmltable'
+       sectionId === 'htmlattributes' || sectionId === 'htmlheadelements'|| sectionId === 'htmlformating' || sectionId === 'htmlinks' || sectionId === 'htmlimages' || sectionId === 'htmlaudio' || sectionId === 'htmlvideo' || sectionId === 'htmllist' || sectionId === 'htmltable' || sectionId === 'htmlforms'
         ? HTML_SIDEBAR
         : sectionId === 'css'|| sectionId === 'prerequisitescss' ||
           sectionId === 'environmentsetupcss' || sectionId === 'csssyntax' || sectionId === 'waytoapply' || sectionId === 'csscomments' ||

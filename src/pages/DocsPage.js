@@ -166,7 +166,37 @@ import HTMLAudioDoc from '../components/DocHTML/audio';
 import HTMLVideoDoc from '../components/DocHTML/vidio';
 import HTMLListsDoc from '../components/DocHTML/htmllist';
 import HTMLTablesDoc from '../components/DocHTML/tables'
-import HTMLFormsDoc from '../components/DocHTML/forms'
+import HTMLFormsDoc from '../components/DocHTML/forms';
+import HTMLFormControlsDoc from '../components/DocHTML/formControls';
+import HTMLInputTypesDoc from '../components/DocHTML/inputTypes';
+import HTMLFormValidationDoc from '../components/DocHTML/formValidation';
+import HTMLSemanticDoc from '../components/DocHTML/sementicHTML';
+import HTMLWebLayoutDoc from '../components/DocHTML/layout';
+import HTMLIframesDoc from '../components/DocHTML/iframes';
+import HTMLSVGDoc from '../components/DocHTML/svg';
+import HTMLCanvasDoc from '../components/DocHTML/canvas';
+import HTMLEntitiesDoc from '../components/DocHTML/htmlentities';
+import HTMLCharacterEncodingDoc from '../components/DocHTML/characterencoding';
+import HTMLWebAPIsDoc from '../components/DocHTML/webelementsapi';
+import HTMLWebStorageDoc from '../components/DocHTML/webstorage';
+import HTMLDragAndDropDoc from '../components/DocHTML/draganddrop';
+import HTMLGeolocationDoc from '../components/DocHTML/geolcation';
+import HTMLAccessibilityDoc from '../components/DocHTML/accessibility';
+import HTMLSEODoc from '../components/DocHTML/htmlseo';
+import HTMLPerformanceOptimizationDoc from '../components/DocHTML/performanceOptimization';
+import HTMLResponsiveDocs from '../components/DocHTML/htmlresponsive';
+import HTMLBestPracticesDoc from '../components/DocHTML/htmlbestPractice';
+import HTMLValidationDoc from '../components/DocHTML/htmlvalidation';
+import HTMLBrowserCompatibilityDoc from '../components/DocHTML/Browsercomp';
+import HTMLDeprecatedTagsDoc from '../components/DocHTML/deprecatedTags';
+import HTMLTemplatesDoc from '../components/DocHTML/templates';
+import HTMLMetadataDoc from '../components/DocHTML/metaData';
+import HTMLWebComponentsDoc from '../components/DocHTML/webcomponents';
+import HTMLSecurityDoc from '../components/DocHTML/htmlsecurity';
+import HTMLWithCSSDoc from '../components/DocHTML/htmlandcss';
+import HTMLWithJavaScriptDoc from '../components/DocHTML/htmlwithJavaScript';
+import HTMLProjectStructureDoc from '../components/DocHTML/htmlprojectsturtur';
+import BestPracticesDocHTML from '../components/DocHTML/bestpracticehtml';
 
 
 
@@ -251,6 +281,36 @@ const HTML_SIDEBAR = [
       { id: 'htmllist', label: 'Lists'},
       { id: 'htmltable', label: 'Tables'},
       { id: 'htmlforms', label: 'Forms'},
+      { id: 'htmlformcontrols', label: 'Form Controls'},
+      { id: 'htmlinputtypes', label: 'Input Types'},
+      { id: 'htmlformvalidation', label: 'Form Validation'},
+      { id: 'htmlsementic', label: 'Semantic HTML'},
+      { id: 'htmllayout', label: 'Layout'},
+      { id: 'htmliframe', label: 'Iframes'},
+      { id: 'htmlsvg', label: 'SVG'},
+      { id: 'htmlcanvas', label: 'Canvas'},
+      { id: 'htmlentities', label: 'HTML Entities'},
+      { id: 'htmlcharacterencoding', label: 'Character Encoding'},
+      { id: 'htmlwebelementsapi', label: ' HTML APIs'},
+      { id: 'htmlwebstorage', label: 'Web Storage'},
+      { id: 'htmldraganddrop', label: 'Drag and Drop'},
+      { id: 'htmlgeoloaction', label: 'Geolocation'},
+      { id: 'htmlaccessibility', label: 'Accessibility'},
+      { id: 'htmlseo', label: 'SEO'},
+      { id: 'performanceoptimization', label: 'Performance Optimization'},
+      { id: 'htmlresponsive', label: 'HTMLResponsiveDocs'},
+      { id: 'htmlbestPractice', label: 'HTML Best Practices'},
+      { id: 'htmlvalidation', label: 'HTML Validation'},
+      { id: 'htmlbrowsercomp', label: 'Browser Compatibility'},
+      { id: 'htmldeprecated', label: 'Deprecated Tags'},
+      { id: 'htmltemplates', label: 'HTML Templates'},
+      { id: 'htmlmetadata', label: 'Metadata'},
+      { id: 'htmlwebcomponnent', label: 'Web Components'},
+      { id: 'htmlsecurity', label: 'Security'},
+      { id: 'htmlandcss', label: ' HTML with CSS '},
+      { id: 'htmlwithJavscript', label: ' HTML with JavaScript'},
+      { id: 'htmlprojexctsturture', label: 'Project Structure'},
+      { id: 'bestpracticehtml', label: 'Best Practices'},
     ],
   },
 ];
@@ -483,7 +543,37 @@ const PAGES = {
   htmllist: HTMLListsDoc,
   htmltable: HTMLTablesDoc,   
   htmlforms: HTMLFormsDoc,
-  
+  htmlformcontrols: HTMLFormControlsDoc,
+  htmlinputtypes: HTMLInputTypesDoc,
+  htmlformvalidation: HTMLFormValidationDoc,
+  htmlsementic: HTMLSemanticDoc,
+  htmllayout: HTMLWebLayoutDoc,
+  htmliframe: HTMLIframesDoc,
+  htmlsvg: HTMLSVGDoc,
+  htmlcanvas: HTMLCanvasDoc,
+  htmlentities: HTMLEntitiesDoc,
+  htmlcharacterencoding: HTMLCharacterEncodingDoc,
+  htmlwebelementsapi: HTMLWebAPIsDoc,
+  htmlwebstorage: HTMLWebStorageDoc,
+  htmldraganddrop: HTMLDragAndDropDoc,
+  htmlgeoloaction: HTMLGeolocationDoc,
+  htmlaccessibility: HTMLAccessibilityDoc,
+  htmlseo: HTMLSEODoc,
+  performanceoptimization: HTMLPerformanceOptimizationDoc,
+  htmlresponsive: HTMLResponsiveDocs,
+  htmlbestPractice: HTMLBestPracticesDoc,
+  htmlvalidation: HTMLValidationDoc,
+  htmlbrowsercomp: HTMLBrowserCompatibilityDoc,
+  htmldeprecated: HTMLDeprecatedTagsDoc,
+  htmltemplates: HTMLTemplatesDoc,
+  htmlmetadata: HTMLMetadataDoc,
+  htmlwebcomponnent: HTMLWebComponentsDoc,
+  htmlsecurity: HTMLSecurityDoc,
+  htmlandcss: HTMLWithCSSDoc,
+  htmlwithJavscript: HTMLWithJavaScriptDoc,
+  htmlprojexctsturture:HTMLProjectStructureDoc,
+  bestpracticehtml: BestPracticesDocHTML,
+
 
 };
 
@@ -496,7 +586,13 @@ export default function DocsPage() {
       ? JAVASCRIPT_SIDEBAR
       : sectionId === 'html' || sectionId === 'html-structure' || sectionId === 'html-forms' || sectionId === 'htmlintroduction' ||
        sectionId === 'htmlpre' || sectionId === 'htmlenv' || sectionId === 'htmlsetup' || sectionId === 'htmlElements' || 
-       sectionId === 'htmlattributes' || sectionId === 'htmlheadelements'|| sectionId === 'htmlformating' || sectionId === 'htmlinks' || sectionId === 'htmlimages' || sectionId === 'htmlaudio' || sectionId === 'htmlvideo' || sectionId === 'htmllist' || sectionId === 'htmltable' || sectionId === 'htmlforms'
+       sectionId === 'htmlattributes' || sectionId === 'htmlheadelements'|| sectionId === 'htmlformating' || sectionId === 'htmlinks' || sectionId === 'htmlimages' || sectionId === 'htmlaudio' || sectionId === 'htmlvideo' || sectionId === 'htmllist' 
+       || sectionId === 'htmltable' || sectionId === 'htmlforms' || sectionId === 'htmlformcontrols' || sectionId === 'htmlinputtypes' || sectionId === 'htmlformvalidation' || 
+       sectionId === 'htmlsementic' || sectionId === 'htmllayout' || sectionId === 'htmliframe' || sectionId === 'htmlsvg' || sectionId === 'htmlcanvas' || 
+       sectionId === 'htmlentities' || sectionId === 'htmlcharacterencoding' || sectionId === 'htmlwebelementsapi' || sectionId === 'htmlwebstorage' || 
+       sectionId === 'htmldraganddrop' || sectionId === 'htmlgeoloaction' || sectionId === 'htmlaccessibility' || sectionId === 'htmlseo' || sectionId === 'performanceoptimization' || 
+       sectionId === 'htmlresponsive' || sectionId === 'htmlbestPractice' || sectionId === 'htmlvalidation' || sectionId === 'htmlbrowsercomp' || sectionId === 'htmldeprecated' || 
+       sectionId === 'htmltemplates' || sectionId === 'htmlmetadata' || sectionId === 'htmlwebcomponnent' || sectionId === 'htmlsecurity' || sectionId === 'htmlandcss' || sectionId === 'htmlwithJavscript' || sectionId === 'htmlprojexctsturture' || sectionId === 'bestpracticehtml'
         ? HTML_SIDEBAR
         : sectionId === 'css'|| sectionId === 'prerequisitescss' ||
           sectionId === 'environmentsetupcss' || sectionId === 'csssyntax' || sectionId === 'waytoapply' || sectionId === 'csscomments' ||

@@ -25,6 +25,7 @@ export default function DocsSidebar({ navGroups = docsNav, variant = 'permanent'
           boxSizing: 'border-box',
           bgcolor: 'background.paper',
           borderRight: '1px solid rgba(155,138,196,0.15)',
+          zIndex: (theme) => theme.zIndex.appBar - 1,
         },
       }}
     >

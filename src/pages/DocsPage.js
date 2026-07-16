@@ -198,6 +198,11 @@ import HTMLWithCSSDoc from '../components/DocHTML/htmlandcss';
 import HTMLWithJavaScriptDoc from '../components/DocHTML/htmlwithJavaScript';
 import HTMLProjectStructureDoc from '../components/DocHTML/htmlprojectsturtur';
 import BestPracticesDocHTML from '../components/DocHTML/bestpracticehtml';
+import HTMLCommonMistakesDoc from '../components/DocHTML/commonMistakes';
+import HTMLInterviewQuestionsDoc from '../components/DocHTML/interviewQuestions';
+import HTMLRealProjectsDoc from '../components/DocHTML/realProjects';
+import HTMLCheatSheetDoc from '../components/DocHTML/cheatSheet';
+import HTMLFaqDoc from '../components/DocHTML/faq';
 
 
 
@@ -312,6 +317,11 @@ const HTML_SIDEBAR = [
       { id: 'htmlwithJavscript', label: ' HTML with JavaScript'},
       { id: 'htmlprojexctsturture', label: 'Project Structure'},
       { id: 'bestpracticehtml', label: 'Best Practices'},
+      { id: 'htmlcommonmistakes', label: 'Common Mistakes'},
+      { id: 'htmlinterviewquestions', label: 'Interview Questions'},
+      { id: 'htmlrealprojects', label: 'Real Projects'},
+      { id: 'htmlcheatsheet', label: 'Cheat Sheets'},
+      { id: 'htmlfaq', label: 'FAQs'},
     ],
   },
 ];
@@ -574,6 +584,11 @@ const PAGES = {
   htmlwithJavscript: HTMLWithJavaScriptDoc,
   htmlprojexctsturture:HTMLProjectStructureDoc,
   bestpracticehtml: BestPracticesDocHTML,
+  htmlcommonmistakes: HTMLCommonMistakesDoc,
+  htmlinterviewquestions: HTMLInterviewQuestionsDoc,
+  htmlrealprojects: HTMLRealProjectsDoc,
+  htmlcheatsheet: HTMLCheatSheetDoc,
+  htmlfaq: HTMLFaqDoc,
 
 
 };
@@ -598,7 +613,7 @@ export default function DocsPage() {
        sectionId === 'htmlentities' || sectionId === 'htmlcharacterencoding' || sectionId === 'htmlwebelementsapi' || sectionId === 'htmlwebstorage' || 
        sectionId === 'htmldraganddrop' || sectionId === 'htmlgeoloaction' || sectionId === 'htmlaccessibility' || sectionId === 'htmlseo' || sectionId === 'performanceoptimization' || 
        sectionId === 'htmlresponsive' || sectionId === 'htmlbestPractice' || sectionId === 'htmlvalidation' || sectionId === 'htmlbrowsercomp' || sectionId === 'htmldeprecated' || 
-       sectionId === 'htmltemplates' || sectionId === 'htmlmetadata' || sectionId === 'htmlwebcomponnent' || sectionId === 'htmlsecurity' || sectionId === 'htmlandcss' || sectionId === 'htmlwithJavscript' || sectionId === 'htmlprojexctsturture' || sectionId === 'bestpracticehtml'
+       sectionId === 'htmltemplates' || sectionId === 'htmlmetadata' || sectionId === 'htmlwebcomponnent' || sectionId === 'htmlsecurity' || sectionId === 'htmlandcss' || sectionId === 'htmlwithJavscript' || sectionId === 'htmlprojexctsturture' || sectionId === 'bestpracticehtml' || sectionId === 'htmlcommonmistakes' || sectionId === 'htmlinterviewquestions' || sectionId === 'htmlrealprojects' || sectionId === 'htmlcheatsheet' || sectionId === 'htmlfaq'
         ? HTML_SIDEBAR
         : sectionId === 'css'|| sectionId === 'prerequisitescss' ||
           sectionId === 'environmentsetupcss' || sectionId === 'csssyntax' || sectionId === 'waytoapply' || sectionId === 'csscomments' ||

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { 
   Box, 
   Container, 
@@ -9,8 +9,11 @@ import {
   Grid, 
   Link, 
   IconButton, 
-  TextField 
+  TextField,
+  Alert,
+  Collapse
 } from '@mui/material';
+import { Link as RouterLink } from 'react-router-dom';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import GitHubIcon from '@mui/icons-material/GitHub';
@@ -18,33 +21,43 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function CtaFooter() {
+  const [email, setEmail] = useState('');
+  const [subscribed, setSubscribed] = useState(false);
+
+  const handleNewsletterSubmit = (e) => {
+    e.preventDefault();
+    if (!email.trim()) return;
+    setSubscribed(true);
+    setEmail('');
+  };
+
   // Navigation Links Setup
   const footerLinks = [
     {
       title: 'Product',
       links: [
-        { label: 'Features', url: '#features' },
-        { label: 'Pricing', url: '#pricing' },
-        { label: 'Integrations', url: '#integrations' },
-        { label: 'Changelog', url: '#changelog' },
+        { label: 'Features', to: '/features' },
+        { label: 'Pricing', to: '/pricing' },
+        { label: 'Integrations', to: '/integrations' },
+        { label: 'Changelog', to: '/changelog' },
       ],
     },
     {
       title: 'Resources',
       links: [
-        { label: 'Documentation', url: '#docs' },
-        { label: 'Guides', url: '#guides' },
-        { label: 'API Reference', url: '#api' },
-        { label: 'Status', url: '#status' },
+        { label: 'Documentation', to: '/docs/introduction' },
+        { label: 'Guides', to: '/guides' },
+        { label: 'API Reference', to: '/api-reference' },
+        { label: 'Status', to: '/status' },
       ],
     },
     {
       title: 'Company',
       links: [
-        { label: 'About Us', url: '#about' },
-        { label: 'Blog', url: '#blog' },
-        { label: 'Careers', url: '#careers' },
-        { label: 'Contact', url: '#contact' },
+        { label: 'About Us', to: '/about' },
+        { label: 'Blog', to: '/blog' },
+        { label: 'Careers', to: '/careers' },
+        { label: 'Contact', to: '/contact' },
       ],
     },
   ];
@@ -79,6 +92,8 @@ export default function CtaFooter() {
             variant="contained"
             color="primary"
             size="large"
+            component={RouterLink}
+            to="/docs/introduction"
             endIcon={<ArrowForwardIcon />}
             sx={{
               borderRadius: 2,
@@ -118,13 +133,37 @@ export default function CtaFooter() {
                   Supercharging developer workflows with automated code generation that feels like real sorcery.
                 </Typography>
                 <Stack direction="row" spacing={1}>
-                  <IconButton aria-label="GitHub" size="small" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                  <IconButton
+                    component="a"
+                    href="https://github.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="GitHub"
+                    size="small"
+                    sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+                  >
                     <GitHubIcon fontSize="small" />
                   </IconButton>
-                  <IconButton aria-label="Twitter" size="small" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                  <IconButton
+                    component="a"
+                    href="https://twitter.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Twitter"
+                    size="small"
+                    sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+                  >
                     <TwitterIcon fontSize="small" />
                   </IconButton>
-                  <IconButton aria-label="LinkedIn" size="small" sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}>
+                  <IconButton
+                    component="a"
+                    href="https://linkedin.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    size="small"
+                    sx={{ color: 'text.secondary', '&:hover': { color: 'primary.main' } }}
+                  >
                     <LinkedInIcon fontSize="small" />
                   </IconButton>
                 </Stack>
@@ -143,7 +182,8 @@ export default function CtaFooter() {
                       {section.links.map((link) => (
                         <Link
                           key={link.label}
-                          href={link.url}
+                          component={RouterLink}
+                          to={link.to}
                           variant="body2"
                           underline="none"
                           sx={{ 
@@ -169,17 +209,30 @@ export default function CtaFooter() {
               <Typography variant="body2" sx={{ color: 'text.secondary', mb: 2 }}>
                 Get notified about new spells and releases.
               </Typography>
-              <Stack direction="row" spacing={1} component="form" onSubmit={(e) => e.preventDefault()}>
+              <Collapse in={subscribed}>
+                <Alert
+                  severity="success"
+                  onClose={() => setSubscribed(false)}
+                  sx={{ mb: 2, borderRadius: 2 }}
+                >
+                  Thanks for subscribing!
+                </Alert>
+              </Collapse>
+              <Stack direction="row" spacing={1} component="form" onSubmit={handleNewsletterSubmit}>
                 <TextField 
                   size="small" 
+                  type="email"
                   placeholder="Your email" 
                   variant="outlined" 
                   fullWidth
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
                   sx={{ 
                     '& .MuiOutlinedInput-root': { borderRadius: 2 } 
                   }}
                 />
-                <Button variant="outlined" sx={{ borderRadius: 2, px: 2 }}>
+                <Button type="submit" variant="outlined" sx={{ borderRadius: 2, px: 2 }}>
                   Join
                 </Button>
               </Stack>
@@ -205,10 +258,10 @@ export default function CtaFooter() {
             </Typography>
             
             <Stack direction="row" spacing={3}>
-              <Link href="#privacy" variant="caption" underline="hover" sx={{ color: 'text.secondary' }}>
+              <Link component={RouterLink} to="/privacy" variant="caption" underline="hover" sx={{ color: 'text.secondary' }}>
                 Privacy Policy
               </Link>
-              <Link href="#terms" variant="caption" underline="hover" sx={{ color: 'text.secondary' }}>
+              <Link component={RouterLink} to="/terms" variant="caption" underline="hover" sx={{ color: 'text.secondary' }}>
                 Terms of Service
               </Link>
             </Stack>

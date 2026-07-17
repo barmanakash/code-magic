@@ -24,7 +24,7 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <Box sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
+    <Box id="how-it-works" sx={{ py: { xs: 8, md: 12 }, bgcolor: 'background.paper' }}>
       <Container maxWidth="lg">
         <Box sx={{ maxWidth: 560, mb: 7 }}>
           <Typography

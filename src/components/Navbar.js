@@ -15,26 +15,23 @@ import {
   ListItemText,
   Divider,
 } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import MenuIcon from '@mui/icons-material/Menu';
 
 const docCategories = [
   { label: 'ReactJS', to: '/docs/introduction' },
   { label: 'JavaScript', to: '/docs/javascript' },
-  { label: 'HTML', to: '/docs/html' },
+  { label: 'HTML', to: '/docs/htmlintroduction' },
   { label: 'CSS', to: '/docs/css' },
-];
-
-const navItems = [
-  { label: 'How it works', href: '#how-it-works' },
-  { label: 'Pricing', href: '#pricing' },
 ];
 
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileOpen, setMobileOpen] = useState(false);
   const open = Boolean(anchorEl);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -46,6 +43,22 @@ export default function Navbar() {
 
   const handleMobileToggle = () => {
     setMobileOpen((prev) => !prev);
+  };
+
+  const handleHowItWorksClick = (e) => {
+    e.preventDefault();
+    if (location.pathname === '/') {
+      const el = document.getElementById('how-it-works');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    } else {
+      navigate('/', { state: { scrollTo: 'how-it-works' } });
+    }
+    if (mobileOpen) setMobileOpen(false);
+  };
+
+  const handleSignupClick = () => {
+    navigate('/pricing');
+    if (mobileOpen) setMobileOpen(false);
   };
 
   const drawer = (
@@ -76,21 +89,17 @@ export default function Navbar() {
         <Divider sx={{ borderColor: 'rgba(155,138,196,0.18)' }} />
 
         <List disablePadding>
-          {navItems.map((item) => (
-            <ListItemButton
-              key={item.label}
-              component="a"
-              href={item.href}
-              sx={{ borderRadius: 1.5, mb: 0.5 }}
-            >
-              <ListItemText primary={item.label} primaryTypographyProps={{ fontSize: 15 }} />
-            </ListItemButton>
-          ))}
+          <ListItemButton onClick={handleHowItWorksClick} sx={{ borderRadius: 1.5, mb: 0.5 }}>
+            <ListItemText primary="How it works" primaryTypographyProps={{ fontSize: 15 }} />
+          </ListItemButton>
+          <ListItemButton component={RouterLink} to="/pricing" sx={{ borderRadius: 1.5, mb: 0.5 }}>
+            <ListItemText primary="Pricing" primaryTypographyProps={{ fontSize: 15 }} />
+          </ListItemButton>
         </List>
 
         <Divider sx={{ borderColor: 'rgba(155,138,196,0.18)' }} />
 
-        <Button variant="contained" color="primary" fullWidth sx={{ borderRadius: 2, py: 1.1 }}>
+        <Button variant="contained" color="primary" fullWidth onClick={handleSignupClick} sx={{ borderRadius: 2, py: 1.1 }}>
           cast('signup')
         </Button>
       </Stack>
@@ -179,22 +188,43 @@ export default function Navbar() {
               ))}
             </Menu>
           </Box>
-          {navItems.map((item) => (
-            <Typography
-              key={item.label}
-              variant="body2"
-              sx={{ color: 'text.secondary', cursor: 'pointer', '&:hover': { color: 'text.primary' } }}
-            >
-              <a href={item.href} style={{ color: 'inherit', textDecoration: 'none' }}>
-                {item.label}
-              </a>
-            </Typography>
-          ))}
+          <Typography
+            component="button"
+            type="button"
+            onClick={handleHowItWorksClick}
+            variant="body2"
+            sx={{
+              color: 'text.secondary',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              background: 'transparent',
+              border: 'none',
+              padding: 0,
+              font: 'inherit',
+              '&:hover': { color: 'text.primary' },
+            }}
+          >
+            How it works
+          </Typography>
+          <Typography
+            component={RouterLink}
+            to="/pricing"
+            variant="body2"
+            sx={{
+              color: 'text.secondary',
+              textDecoration: 'none',
+              cursor: 'pointer',
+              '&:hover': { color: 'text.primary' },
+            }}
+          >
+            Pricing
+          </Typography>
         </Stack>
 
         <Button
           variant="contained"
           color="primary"
+          onClick={handleSignupClick}
           sx={{
             ml: 3,
             borderRadius: 2,

@@ -18,6 +18,7 @@ import {
 import { Link as RouterLink, useNavigate, useLocation } from 'react-router-dom';
 import AutoAwesomeIcon from '@mui/icons-material/AutoAwesome';
 import MenuIcon from '@mui/icons-material/Menu';
+import DocsSearch from './DocsSearch';
 
 const docCategories = [
   { label: 'ReactJS', to: '/docs/introduction' },
@@ -70,6 +71,12 @@ export default function Navbar() {
             Code Magic
           </Typography>
         </Stack>
+
+        <Divider sx={{ borderColor: 'rgba(155,138,196,0.18)' }} />
+
+        <Box onClick={(e) => e.stopPropagation()}>
+          <DocsSearch variant="inline" onNavigate={handleMobileToggle} />
+        </Box>
 
         <Divider sx={{ borderColor: 'rgba(155,138,196,0.18)' }} />
 
@@ -219,6 +226,7 @@ export default function Navbar() {
           >
             Pricing
           </Typography>
+          <DocsSearch variant="popper" />
         </Stack>
 
         <Button
